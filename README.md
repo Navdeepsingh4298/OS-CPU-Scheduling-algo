@@ -1,5 +1,5 @@
 # OS-CPU-Scheduling-algo
-Operating System CPU Scheduling Algorithms in C
+## Operating System CPU Scheduling Algorithms in C
 
 -> First Come First Serve Scheduling (Non - Preemptive) <br />
 -> Shortest job First Scheduling (Non - Preemptive) <br />
