@@ -1,4 +1,4 @@
-// Priority Scheduling (Non-preemptive)
+// Priority Scheduling (Non-Preemptive)
 // Completed
 
 #include <stdio.h>
