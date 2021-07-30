@@ -31,7 +31,7 @@ int isAllProcessesCompleted(struct Process Y[], int noOfProcesses){
 }
 
 int main(){
-  int i, j, done, noOfProcesses;
+  int i, done, noOfProcesses;
   float totalWaitingTime=0, totalTurnAroundTime=0;
 
   printf("\nEnter no. of processes: ");
