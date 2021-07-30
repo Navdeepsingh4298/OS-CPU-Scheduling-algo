@@ -1,5 +1,6 @@
 // Shortest Job Remaining First Scheduling (Pre-emptive) (SJRF)
 // Shortest Remaining Time First Scheduling (Pre-emptive) (SRTF)
+// Completed 
 
 #include <stdio.h>
 
