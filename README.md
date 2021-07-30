@@ -5,5 +5,6 @@
 -> Shortest job First Scheduling (Non - Preemptive) <br />
 -> Shortest Remaining Job First Scheduling (Preemptive) <br />
 -> Round Robin Scheduling (Non - Preemptive) <br />
--> Priority Scheduling (Non - Preemptive) it can be (Preemptive) too <br />
+-> Priority Scheduling (Non - Preemptive) <br />
+-> Priority Scheduling (Preemptive) <br />
 -> Multiple-level Queues Scheduling <br />
