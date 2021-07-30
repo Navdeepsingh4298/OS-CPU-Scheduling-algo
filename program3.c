@@ -14,9 +14,6 @@ int getMinBurstTimePID(struct Process X[], int noOfProcesses){
   int minBurstTime=999, minBurstTimePID=999;
   for (int i = 0; i < noOfProcesses; i++){
     if((X[i].arrivalTime <= currentTime) && (X[i].remainingTime < minBurstTime) && (X[i].isCompleted == 0)){
-      if(X[i].remainingTime == minBurstTime){
-        continue;
-      }
       minBurstTime = X[i].remainingTime;
       minBurstTimePID = i;
     }
