@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 struct Process{
-  int arrivalTime, burstTime, waitingTime, allocTime, turnAroundTime, isCompleted;
+  int arrivalTime, burstTime, waitingTime, completionTime, turnAroundTime, isCompleted;
 };
 int currentTime = 0;
 
@@ -29,10 +29,9 @@ int isAllProcessesCompleted(struct Process Y[], int noOfProcesses){
   return 1;
 }
 
-
 int main(){
   int i, j, done, noOfProcesses;
-  float totalWaitingTime, totalTurnAroundTime;
+  float totalWaitingTime = 0, totalTurnAroundTime = 0;
 
   printf("\nEnter no. of processes: ");
   scanf("%d", &noOfProcesses);
@@ -48,22 +47,14 @@ int main(){
     scanf("%d", &P[i].burstTime);
     P[i].isCompleted = 0;
   }
-  
-  // First process scheduled first because it arrived first in Ready Queue
-  currentTime += P[0].burstTime;
-  P[0].allocTime = P[0].waitingTime = 0;
-  P[0].turnAroundTime = P[0].waitingTime + P[0].burstTime;
-  P[0].isCompleted = 1;
-  totalWaitingTime = P[0].waitingTime;
-  totalTurnAroundTime = P[0].turnAroundTime;
 
   while(done != 1){
-    for (i = 1; i < noOfProcesses; i++){
+    for (i = 0; i < noOfProcesses; i++){
       j = getMinBurstTimePID(P, noOfProcesses);
-      P[j].allocTime = currentTime;
       currentTime += P[j].burstTime;
-      P[j].waitingTime = P[j].allocTime - P[j].arrivalTime;
-      P[j].turnAroundTime = P[j].waitingTime + P[j].burstTime;
+      P[j].completionTime = currentTime;
+      P[j].turnAroundTime = P[j].completionTime - P[j].arrivalTime;
+      P[j].waitingTime = P[j].turnAroundTime - P[j].burstTime;
       P[j].isCompleted = 1;
       totalWaitingTime += P[j].waitingTime;
       totalTurnAroundTime += P[j].turnAroundTime;
